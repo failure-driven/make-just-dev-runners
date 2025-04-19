@@ -1,11 +1,15 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c11
 TARGET = hello_world
+OBJS = hello_world.o message.o
 
 all: $(TARGET)
 
-$(TARGET): hello_world.c
-	$(CC) $(CFLAGS) -o $(TARGET) hello_world.c
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(TARGET) $(OBJS)

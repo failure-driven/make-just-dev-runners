@@ -1,6 +1,7 @@
 #include <stdio.h>
+#include "message.h"
 
 int main() {
-    printf("Hello, World!\n");
+    printf("%s\n", get_message());
     return 0;
 }
