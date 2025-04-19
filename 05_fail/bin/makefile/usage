@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -e
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
+_usage() {
+  echo
+  echo -e "Hi $(whoami)!"
+  echo
+  echo -e "${YELLOW}make${NC}           this handy usage guide"
+  echo
+  echo -e "${YELLOW}make say-it${NC}    run script to say-it"
+  echo
+  echo -e "${GREEN}Setup demo${NC}      demo say-it script"
+  echo
+}
+_usage
