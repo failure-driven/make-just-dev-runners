@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+
+$LOAD_PATH << File.join(__dir__, "..")
+
+require "config/environment"
+
+require "sidekiq/web"
+
+# use Rack::Session::Cookie,
+#   secret: File.read(".session.key"),
+#   same_site: true,
+#   max_age: 86400
+
+run Sidekiq::Web
