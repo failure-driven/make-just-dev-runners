@@ -45,7 +45,6 @@ usage:
 	@echo "Hi ${GREEN}${USER}!${NC} Welcome to ${RED}${CURRENT_DIR}${NC}"
 	@echo
 	@echo "${YELLOW}make${NC}                   show this usage menu"
-	@echo "${YELLOW}make install${NC}           install prerequisites"
 	@echo
 	@echo "${YELLOW}make install${NC}           install ruby & gems"
 	@echo "${YELLOW}make setup${NC}             setup all the things"

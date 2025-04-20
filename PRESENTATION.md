@@ -1,6 +1,6 @@
 # Make vs Justfile vs Mise vs xc
 
-Up your Developer Experience (DX) on your local machine
+_Up your Developer Experience (DX) on your local machine_
 
 - Michael Milewski
 - @saramic github/𝕏
@@ -12,10 +12,12 @@ Up your Developer Experience (DX) on your local machine
 
 ## Makefile backgrounder
 
-1. Always available
-1. Steps to install, run, demo, cleanup, reset, etc
-1. It's a 3rd of the "3 Musketeers" pattern
+1. `make` and `Makefile` – Compile **C/C++** programs
+1. Always available (_almost_)
+1. Comeback in "3 Musketeers" pattern
     - https://3musketeers.io/guide/make.html
+1. It's a 3rd of the "3 Musketeers" pattern
+1. 🅳 🅸 🅰 🅲 – 🅳 eveloper 🅸 nfrastructure 🅰 s 🅲 ode
 
 **DEMO**
 
@@ -28,62 +30,144 @@ _press CTRL-e to execute_
 ---
 
 ## Makefile
-- make & C
-- typical make target: build, link, clean etc, install, run, demo, cleanup, reset, etc
-- check them in the Gems
-    ```bash
-    find ~/.asdf/installs/ruby/3.4.2/lib/ruby/gems -name Makefile
-    ```
-- last I remember running was installing Perl CPAN modules
-    ```bash
-    tar -zxvf package.tar.gz
-    cat INSTALL
-    ./configure
-    make
-    make install
-    ```
 
----
-## Makefile
-- quiryky - tabs, lazy evaluation (.Phony), $$, different environment
-- available everywhere? [ ] alpine install? with vi? awk, sed, grep etc
-- good way to document scripts per repository
-- common Rails related scripts: install, steup, test, lint, lint-fix, dev, run,deploy
-- simplify README - no need to cut and paste
-- autocompletion [ ] free?
-- **Dificulties**
-    - input
-    - if else logic
-    - calling other tasks based on fork logic
-- extend with Bash - mostly to keep in the nothing to install
-- **Examples**
-    - fail in $(fail)
-    - input
-    - inherit,extend make files
+- wow it printed something on the screen 👏
+- a basic C project: `./01_make_hello_world/`
+- Dive in:
+  - [ ] tasks,
+  - [ ] @command,
+  - [ ] tabs,
+  - [ ] lazy evaluation (`.Phony`),
+  - [ ] `$$`,
+  - [ ] different environment (`make env` and `make env-diff-command`)
 
 ---
 
-## Makefile Exapmples
+## Make targets
+- Standard
+    `all`, `build`, `link`, `clean`, `install`, `uninstall`, `rebuild`
+- testing and quality
+    `test`, `check`, `lint`, `format`
+- utility
+    `help`, `version`, `run`, `env`, `deps`, `docker`
+- packaging and distribution
+    `dist`, `release`, `publish`
+
+---
+
+## Why do I care?
+
+- check them out in The Gems
+```bash
+find ~/.asdf/installs/ruby/3.4.2/lib/ruby/gems -name Makefile
+```
+
+_press CTRL-e to execute_
+
+---
+
+## Standard Linux package install
+
+```shell
+tar -zxvf package-vXXX.tar.gz
+cd package-vXXX
+./configure
+make
+make install
+```
+
+---
+
+## Makefile to document your setup
+
+- rails project         - `cd 02_run_a_command`
+- ruby project          - `cd 03_file_create`
+- conditional setup     - `cd 04_if_not_exist`
+- parameters and fail   - `cd 05_fail`
+- include Makefiles     - `cd 06_include`
+
+---
+
+## Makefile Examples
 
 - https://github.com/failure-driven/experimental-methods-in-sidekiq/blob/main/Makefile
-- tmux vs overmind
+
+## Makefile everywhere
+
+- available everywhere (_almost_) just like `vi`, `awk`, `sed`, `grep`, etc
+
+```shell
+docker run -it --rm alpine /bin/ash
+which sed && which awk && which grep
+
+# vi
+
+apk add --no-cache make
+make --version
+
+apk add --no-cache just
+just --version
+```
 
 ---
 
-## Justfile backgrounder
-- built in rust
-- solve similar problem
-- without the quirks - no tabs, any lang, auto document -l
-- call in any lang
-- call other takss
-- bad for lazy file create
-- not on every system - brew install subtask
-    - a bit more complex on Windows WSL - using cargo
-    - issue with shell in Gihubactions
-    - not in Github codespaces
-- Make to bootstap just
-- make is my default
-- just is nicer to use
+## Makefile
+
+- good way to document scripts per repository
+
+---
+
+## Just
+
+- `just` is a handy way to save and run project-specific commands.
+- https://just.systems/man/en/
+    - https://github.com/casey/just
+
+---
+
+## Just examples
+
+- switch to just        = `cd 07_switch_to_just`
+
+---
+
+## Just quirks
+
+- not everywhere
+
+```yaml
+# GitHub actions
+name: Continous Integration
+
+jobs:
+  thing:
+    name: The thing I want to run
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Just
+        uses: extractions/setup-just@v2
+```
+
+---
+
+## Just quirks cont.
+
+```ruby
+# just file for managing this repo
+
+#   - https://github.com/casey/just
+#   - https://just.systems/man/en/
+
+# use bash which is required for GHActions. To overrid locally to make things
+# like colors work with most Mac OS you may need following overrides:
+#       alias just="just --shell zsh"
+# or always call
+#       just --shell zsh
+set shell := ["bash", "-uc"]
+```
 
 ---
 
@@ -138,6 +222,22 @@ I boot strap my environment
 
 my suggestion for push for DIAC
 
+---
+
+             █
+             █
+             █
+             █
+    ███████████████████
+      ▜██████▛  ▟▙      🅳 eveloper
+       ▜████▛  ▟██▙     🅸 nfrastructure
+        ▜██▛  ▟████▙    🅰 s
+         ▜▛  ▟██████▙   🅲 ode
+    ███████████████████
+             █
+             █
+             █
+             █
 ---
 
 ## In Review

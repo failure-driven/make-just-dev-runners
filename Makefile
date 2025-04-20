@@ -14,11 +14,18 @@ define ANNOUNCE
 echo "$(2)$(1)${NC}"
 endef
 
+.PHONY: env
+env:
+	@env | sort
+
 .PHONY: present
 present:
-	# check if slides is present
-	# otherwise brew install slides
+	command -v slides || brew install slides
 	slides PRESENTATION.md
+
+.PHONY: env-diff-command
+env-diff-command:
+	@echo "type in:\n\t${GREEN}diff <(env | sort) <(make env)${RESET}"
 
 .PHONY: usage
 usage:
@@ -30,4 +37,7 @@ usage:
 	@echo "${YELLOW}make${RESET}                     this handy usage guide"
 	@echo
 	@echo "${YELLOW}make present${RESET}             present slide show PRESENTATION.md"
+	@echo
+	@echo "${YELLOW}make env${RESET}                 display ENV under Make"
+	@echo "${YELLOW}make env-diff-command${RESET}    command to comapare ENV"
 	@echo

@@ -13,8 +13,17 @@ _default:
 
     @just --list --unsorted
 
-# presnt slide show PRESENTATION.md
+# present slide show PRESENTATION.md
 present:
-    # check if slides is present
-    # otherwise brew install slides
+    command -v slides || brew install slides
     slides PRESENTATION.md
+
+# run docker alpine
+docker-alpine: _colima-start
+    docker run -it --rm alpine /bin/ash
+
+_colima-start:
+    colima list | grep Running || colima restart
+
+_clean:
+    colima stop
