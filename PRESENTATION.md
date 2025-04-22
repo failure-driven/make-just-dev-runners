@@ -187,6 +187,8 @@ set shell := ["bash", "-uc"]
 - not as polished
 - run your documentation
 - but a higher level of abstraction
+- more info [https://xcfile.dev/getting-started/](
+  https://xcfile.dev/getting-started/)
 
 ---
 
