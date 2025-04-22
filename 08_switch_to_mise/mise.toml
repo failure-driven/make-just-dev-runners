@@ -1,0 +1,17 @@
+[tasks.test]
+description = "test with RSpec"
+run = "bundle exec rspec"
+
+[tasks.lint]
+description = "lint with Rubocop"
+run = "bundle exec rubocop"
+
+[tasks.demo]
+description = "run some ruby"
+run = """
+    ruby -I lib -e 'require "demo_ruby"; puts "\\033[0;31m#{DemoRuby.run}"'
+"""
+
+[tasks.build]
+description = "test, lint and demo all the things"
+depends = ["test", "lint", "demo"]

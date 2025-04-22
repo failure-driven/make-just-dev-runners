@@ -1,0 +1,9 @@
+AllCops:
+  NewCops: enable
+
+Metrics/BlockLength:
+  CountAsOne: 
+    - array
+    - hash
+    - heredoc
+    - method_call

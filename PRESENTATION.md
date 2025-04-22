@@ -127,7 +127,7 @@ just --version
 
 ## Just examples
 
-- switch to just        = `cd 07_switch_to_just`
+- switch to just        - `cd 07_switch_to_just`
 
 ---
 
@@ -173,56 +173,74 @@ set shell := ["bash", "-uc"]
 
 ## Mise new kid on the block
 
-- try
-- scripts
-- github actions, codesapces, windows WSL
-- does away with ASDF
+- relies on `.tool-versions` (no need for ASDF, rvm, rbenv, etc)
+- multithreaded
+- tasks from directory `./mise-tasks/<name>.rb`
+- nice (chmod for you, menus, passes -options...)
+- more info [https://mise.jdx.dev/tasks/](https://mise.jdx.dev/tasks/)
 
 ---
 
 ## xc run your documentation
 
+- controlled by `## Tasks` heading
+- not as polished
 - run your documentation
-- github actions, codesapces, windows WSL
+- but a higher level of abstraction
 
 ---
 
 ## Other tools
 
-npm
-Rakefile
+- npm
+- Rakefile
 
 ---
 
-## Why script
+## Why script?
 
-DevOps pyramid
+---
 
-- manual (playbooks)
-- scripts (bash)
-- declarative
-- generators
-- abstractions
-- custom stacks
+## DevOps pyramid
+
+                                    @
+                                  @   @
+                                @       @
+                              @           @
+                            @  Generators   @
+                          @                   @
+                        @      Declarative      @
+                      @                           @
+                    @            SCRIPTS            @
+                  @                                   @
+                @                MANUAL                 @
+              @                                           @
+            @                    KLUDGE                     @
+          @                                                   @
+        @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
 
 ---
 
 ## Dev setup analog
 
-DevOps pyramid
-
-- manual (playbooks) - cut & past and click ops
-- scripts (bash) - Make/bash
-- declarative - Brew/asdf
-- generators
-- abstractions
-- custom stacks
-
-I boot strap my environment
-
-my suggestion for push for DIAC
+                                    @
+                                  @   @
+                                @       @
+                              @           @
+                            @  Declarative  @
+                          @    (brew, ASDF)   @
+                        @                       @
+                      @      SCRIPTS (bash/make)  @
+                    @                               @
+                  @          MANUAL (README.md)       @
+                @                                       @
+              @                  KLUDGE                   @
+            @                                               @
+          @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
 
 ---
+
+## Push for DIaC
 
              █
              █
@@ -238,11 +256,15 @@ my suggestion for push for DIAC
              █
              █
              █
+
 ---
 
 ## In Review
 
-- ...
+- don't rely on cobbelled together developer setup!!!
+- `bash` and `make` are your friends
+- extend through `Brew`, `Just`, `ASDF`, `mise`
+- watch out for new tools like `xc`
 
 ---
 
