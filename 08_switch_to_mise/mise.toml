@@ -1,9 +1,15 @@
+[tasks.install]
+description = "install with bundler"
+run = "bundle"
+
 [tasks.test]
 description = "test with RSpec"
+depends = ["install"]
 run = "bundle exec rspec"
 
 [tasks.lint]
 description = "lint with Rubocop"
+depends = ["install"]
 run = "bundle exec rubocop"
 
 [tasks.demo]

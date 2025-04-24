@@ -45,7 +45,7 @@ Requires: cargo-script
 #!/usr/bin/env run-cargo-script
 
 fn main() {
-    println!("Hello Rust🦀!");
+    println!("Hello Rust 🦀!");
 }
 ```
 
@@ -53,10 +53,6 @@ fn main() {
 ### all-the-hello
 
 Requires: bash-hello, ruby-hello, python-hello, node-hello, rust-hello
-
-```sh
-echo world
-```
 
 ### clean
 

@@ -176,7 +176,8 @@ set shell := ["bash", "-uc"]
 - relies on `.tool-versions` (no need for ASDF, rvm, rbenv, etc)
 - multithreaded
 - tasks from directory `./mise-tasks/<name>.rb`
-- nice (chmod for you, menus, passes -options...)
+- nice (chmod for you, menus, passes -options, polished)
+- cons - (turn off?, install the world)
 - more info [https://mise.jdx.dev/tasks/](https://mise.jdx.dev/tasks/)
 
 ---
@@ -209,6 +210,86 @@ set shell := ["bash", "-uc"]
                                   @   @
                                 @       @
                               @           @
+                            @               @
+                          @                   @
+                        @                       @
+                      @                           @
+                    @                               @
+                  @                                   @
+                @                                       @
+              @                                           @
+            @                                               @
+          @                                                   @
+        @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+
+---
+
+## DevOps pyramid
+
+                                    @
+                                  @   @
+                                @       @
+                              @           @
+                            @               @
+                          @                   @
+                        @                       @
+                      @                           @
+                    @                               @
+                  @                                   @
+                @                                       @
+              @                                           @
+            @                    KLUDGE                     @
+          @                                                   @
+        @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+
+---
+
+## DevOps pyramid
+
+                                    @
+                                  @   @
+                                @       @
+                              @           @
+                            @               @
+                          @                   @
+                        @                       @
+                      @                           @
+                    @                               @
+                  @                                   @
+                @                MANUAL                 @
+              @                                           @
+            @                    KLUDGE                     @
+          @                                                   @
+        @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+
+---
+
+## DevOps pyramid
+
+                                    @
+                                  @   @
+                                @       @
+                              @           @
+                            @               @
+                          @                   @
+                        @                       @
+                      @                           @
+                    @            SCRIPTS            @
+                  @                                   @
+                @                MANUAL                 @
+              @                                           @
+            @                    KLUDGE                     @
+          @                                                   @
+        @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+
+---
+
+## DevOps pyramid
+
+                                    @
+                                  @   @
+                                @       @
+                              @           @
                             @  Generators   @
                           @                   @
                         @      Declarative      @
@@ -220,6 +301,63 @@ set shell := ["bash", "-uc"]
             @                    KLUDGE                     @
           @                                                   @
         @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+
+---
+
+## Dev setup analog
+
+                                    @
+                                  @   @
+                                @       @
+                              @           @
+                            @               @
+                          @                   @
+                        @                       @
+                      @                           @
+                    @                               @
+                  @                                   @
+                @                                       @
+              @                  KLUDGE                   @
+            @                                               @
+          @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+
+---
+
+## Dev setup analog
+
+                                    @
+                                  @   @
+                                @       @
+                              @           @
+                            @               @
+                          @                   @
+                        @                       @
+                      @                           @
+                    @                               @
+                  @          MANUAL (README.md)       @
+                @                                       @
+              @                  KLUDGE                   @
+            @                                               @
+          @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+
+---
+
+## Dev setup analog
+
+                                    @
+                                  @   @
+                                @       @
+                              @           @
+                            @               @
+                          @                   @
+                        @                       @
+                      @      SCRIPTS (bash/make)  @
+                    @                               @
+                  @          MANUAL (README.md)       @
+                @                                       @
+              @                  KLUDGE                   @
+            @                                               @
+          @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
 
 ---
 
