@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
+# rubocop:disable Layout/LeadingCommentSpace
 #MISE description="Ruby AU in Red rainbow"
+# rubocop:enable Layout/LeadingCommentSpace
 # frozen_string_literal: true
 
 $LOAD_PATH << File.join(File.dirname(__FILE__), '../lib')
