@@ -25,5 +25,13 @@ docker-alpine: _colima-start
 _colima-start:
     colima list | grep Running || colima restart
 
+_docker:
+    @docker info > /dev/null && \
+        echo -e "{{BLUE}}docker running 🐳{{RESET}}" || \
+        { \
+            echo -e "{{RED}}docker not runnig ❌, trying {{YELLOW}}colima start{{RESET}}"; \
+            colima start || exit 1; \
+        }
+
 _clean:
     colima stop
