@@ -18,6 +18,30 @@ run = """
     ruby -I lib -e 'require "demo_ruby"; puts "\\033[0;31m#{DemoRuby.run}"'
 """
 
+[tasks."demo:rust-install"]
+description = "install cargo-script to run rust as a script"
+run = """
+cargo install --list | grep cargo-script &> /dev/null \
+    || cargo install cargo-script
+"""
+
+[tasks."demo:rust"]
+depends = ["demo:rust-install"]
+description = "say hello from Rust 🦀"
+run = """
+#!/usr/bin/env run-cargo-script
+
+fn main() {
+    println!("Hello Rust 🦀!");
+}
+"""
+
 [tasks.build]
 description = "test, lint and demo all the things"
 depends = ["test", "lint", "demo"]
+
+[tasks.clean]
+description = "clean up"
+run = """
+cargo uninstall cargo-script
+"""
